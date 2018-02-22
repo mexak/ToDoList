@@ -1,0 +1,113 @@
+body{
+  background: #82BFFF;
+  padding: 40px 0 0 100px;
+  display: flex;
+  flex-direction: column;
+}
+
+body, input, button {
+  font-family: 'Open Sans', sans-serif;
+}
+
+header {
+  display: flex;
+  align-items: center;
+}
+
+header input {
+  width: 50%;
+  height: 50px;
+  float: left;
+  color: #58493D;
+  font-size: 18px;
+  font-weight: 400;
+  text-indent: 20px;
+  background: #fff;
+  padding: 0 0 0 0;
+  border-radius: 5px;
+  border-width: 0;
+  border-color: none;
+  border-style: solid;
+  box-shadow: none;
+  outline: none;
+}
+
+header button{
+  width: 50px;
+  height: 50px;
+  top: 15px;
+  right: 15px;
+  z-index: 0;
+  font-size: 18px;
+  border-radius: 5px;
+  border-width: 0;
+  box-shadow: none;
+  outline: none;
+  background-color: #5A00FC;
+  color: #fff;
+  font-weight: bold;
+  margin-left: 10px;
+  cursor: pointer;
+}
+
+.container {
+  width: 50%;
+  float: left;
+  padding: 0;
+}
+
+ul.todo {
+  width: 113%;
+  float: left;
+}
+
+ul.todo li{
+  width: 110%;
+  height: 36px;
+  color: #58493D;
+  font-size: 18px;
+  font-weight: 400;
+  text-indent: 20px;
+  background: #BFE0FF;
+  line-height: 22px;
+  min-height: 50px;
+  border-radius: 5px;
+  font-size: 14px;
+  font-weight: 500;
+  position: relative;
+  box-shadow: none;
+  margin: 10px 0 10px -40px;
+  display: flex;
+  align-items: center;
+}
+
+
+ul.todo li .buttons {
+  width: 100px;
+  height: 36px;
+  background: #ffff;
+  position: absolute;
+  top: 7px;
+  right: 2px;
+}
+
+ul.todo li .buttons button{
+  width: 50px;
+  height: 35px;
+  float: left;
+  background: none;
+  border: 10px;
+  box-shadow: none;
+  position: relative;
+  cursor: pointer;
+}
+
+ul.todo li .buttons button:last-of-type:before{
+  content: "";
+  width: 1px;
+  height: 30px;
+  position: absolute;
+  top: 3px;
+  left: 0;
+  background: #9999FF;
+}
