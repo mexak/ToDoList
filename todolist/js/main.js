@@ -1,7 +1,7 @@
 var removeButton = 'forget'
 var completeButton = 'done'
 
-// After clicking on input, change border color to blue
+// After clicking on input, change brder color to blue
 document.getElementById('item').addEventListener('click', function() {
 document.getElementById('item').style.borderColor = '#5A00FC';
 document.getElementById('item').style.borderWidth = 'medium';
@@ -12,6 +12,16 @@ document.getElementById('item').style.borderWidth = 'medium';
 document.getElementById('add').addEventListener('click', function() {
   var value = document.getElementById('item').value;
   if (value) addItemTodo(value);
+});
+
+// Execute above function when the user releases Enter on the keyboard
+var value = document.getElementById('item');
+
+value.addEventListener('keyup', function(event) {
+  event.preventDefault();
+  if (event.keyCode === 13) {
+    document.getElementById('add').click();
+  }
 });
 
 
@@ -31,10 +41,41 @@ function addItemTodo(text) {
   var complete = document.createElement('button');
   complete.classList.add('complete');
   complete.innerHTML = completeButton;
-
+//
+//   complete.addEventListener('click', completeItem);
+//
   buttons.appendChild(remove);
   buttons.appendChild(complete);
   item.appendChild(buttons);
-
-  list.appendChild(item);
+//
+//   list.insertBefore(item, list.childNodes[0]);
+    list.appendChild(item);
     }
+//
+//
+// function removeItem() {
+//   var item = this.parentNode.parentNode;
+//   var parent = item.parentNode;
+//
+//   parent.removeChild(item);
+// }
+//
+// function copmleteItem(){
+//   var item = this.parentNode.parentNode;
+//   var parent = item.parentNode;
+//   var id = parent.id;
+//
+//   var target = (id === 'todo') ? document.getElementById('completed'):document.getElementById('todo');
+//
+//   parent.removeChild(item);
+//   target.insertBefore(item, target.childNodes[0]);
+
+//   if (id === 'todo'){
+// // todo item to be completed
+//   target = document.getElementById('completed');
+//   } else {
+// // todo item to be redone
+//   target = document.getElementById('todo');
+//
+//   }
+// }
