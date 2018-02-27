@@ -14,7 +14,10 @@ var completeButton = 'done'
 // If there is any input, add it to the list after clicking the button
 document.getElementById('add').addEventListener('click', function() {
   var value = document.getElementById('item').value;
-  if (value) addItemTodo(value);
+  if (value) {
+    addItemTodo(value);
+    document.getElementById('item').value = '';
+  }
 });
 
 // Execute above function when the user releases Enter on the keyboard
@@ -52,7 +55,7 @@ function addItemTodo(text) {
   item.appendChild(buttons);
 //
 //   list.insertBefore(item, list.childNodes[0]);
-    list.appendChild(item);
+  list.insertBefore(item, list.childNodes[0]);
     }
 //
 //
