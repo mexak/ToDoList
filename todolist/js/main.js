@@ -30,6 +30,12 @@ value.addEventListener('keyup', function(event) {
   }
 });
 
+function removeItem() {
+  var item = this.parentNode.parentNode;
+  var parent = item.parentNode;
+
+  parent.removeChild(item);
+}
 
 function addItemTodo(text) {
   var list = document.getElementById('todo');
@@ -43,6 +49,9 @@ function addItemTodo(text) {
   var remove = document.createElement('button');
   remove.classList.add('remove');
   remove.innerHTML = removeButton;
+
+  // Click event that removes item
+  remove.addEventListener('click', removeItem);
 
   var complete = document.createElement('button');
   complete.classList.add('complete');
@@ -59,12 +68,7 @@ function addItemTodo(text) {
     }
 //
 //
-// function removeItem() {
-//   var item = this.parentNode.parentNode;
-//   var parent = item.parentNode;
-//
-//   parent.removeChild(item);
-// }
+
 //
 // function copmleteItem(){
 //   var item = this.parentNode.parentNode;
