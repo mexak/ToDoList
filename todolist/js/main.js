@@ -1,12 +1,15 @@
 var removeButton = 'forget'
 var completeButton = 'done'
 
-// After clicking on input, change brder color to blue
-document.getElementById('item').addEventListener('click', function() {
-document.getElementById('item').style.borderColor = '#5A00FC';
-document.getElementById('item').style.borderWidth = 'medium';
-
-});
+// After clicking on input, change brder color to pink
+// document.getElementById('item').addEventListener('click', function() {
+// document.getElementById('item').style.borderColor = 'pink';
+// document.getElementById('item').style.borderWidth = '2px';
+// document.getElementById('item').style.boxShadow = '0 0 2px 2px pink';
+//
+// });
+//
+// });
 
 // If there is any input, add it to the list after clicking the button
 document.getElementById('add').addEventListener('click', function() {
