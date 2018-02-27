@@ -51,9 +51,11 @@ header input {
 
 }
 
-/*header input::-moz-input-placeholder-{
-  color: #DBB7FF;
-}*/
+header input:hover{
+  border-color: pink;
+  border-width: 2px;
+  box-shadow: 0 0 2px 2px pink;
+}
 
 header button{
   width: 50px;
