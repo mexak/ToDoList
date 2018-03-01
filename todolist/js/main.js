@@ -37,6 +37,17 @@ function removeItem() {
   parent.removeChild(item);
 }
 
+function completeItem(){
+  var item = this.parentNode.parentNode;
+  var parent = item.parentNode;
+  var id = parent.id;
+// Should item be added to the completed list or re-added to todo list
+  var target = (id === 'todo') ? document.getElementById('completed'):document.getElementById('todo');
+
+  parent.removeChild(item);
+  target.insertBefore(item, target.childNodes[0]);
+}
+
 function addItemTodo(text) {
   var list = document.getElementById('todo');
 
@@ -56,36 +67,13 @@ function addItemTodo(text) {
   var complete = document.createElement('button');
   complete.classList.add('complete');
   complete.innerHTML = completeButton;
-//
-//   complete.addEventListener('click', completeItem);
-//
+// Click event for completing the item
+
+  complete.addEventListener('click', completeItem);
+
   buttons.appendChild(remove);
   buttons.appendChild(complete);
   item.appendChild(buttons);
-//
-//   list.insertBefore(item, list.childNodes[0]);
+
   list.insertBefore(item, list.childNodes[0]);
-    }
-//
-//
-
-//
-// function copmleteItem(){
-//   var item = this.parentNode.parentNode;
-//   var parent = item.parentNode;
-//   var id = parent.id;
-//
-//   var target = (id === 'todo') ? document.getElementById('completed'):document.getElementById('todo');
-//
-//   parent.removeChild(item);
-//   target.insertBefore(item, target.childNodes[0]);
-
-//   if (id === 'todo'){
-// // todo item to be completed
-//   target = document.getElementById('completed');
-//   } else {
-// // todo item to be redone
-//   target = document.getElementById('todo');
-//
-//   }
-// }
+}
